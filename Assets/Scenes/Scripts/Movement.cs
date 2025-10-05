@@ -25,11 +25,12 @@ public class Movement : MonoBehaviour
         rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
-    void ProcessInputs()
+    void ProcessInputs() //check for input
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        moveDirection = new Vector2(moveX, moveY);
+        moveDirection = new Vector2(moveX, moveY).normalized; // makes diagonal speed the same
+        
     }
 }
