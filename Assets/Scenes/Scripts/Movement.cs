@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -12,6 +13,19 @@ public class Movement : MonoBehaviour
     void Update()
     {
         ProcessInputs();
+        LookAtCamera();
+
+
+
+    }
+
+
+    private void LookAtCamera()
+    {
+        var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Camera.main.transform.rotation = Quaternion.Euler(0f,0f,0f);
     }
 
     void FixedUpdate()
