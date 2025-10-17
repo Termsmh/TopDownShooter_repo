@@ -12,20 +12,26 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        LockCameraOnPlayer();
+        LookAtMouse();
         ProcessInputs();
-        LookAtCamera();
 
 
 
     }
 
 
-    private void LookAtCamera()
+    private void LookAtMouse()
     {
         var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        Camera.main.transform.rotation = Quaternion.Euler(0f,0f,0f);
+    }
+
+    private void LockCameraOnPlayer()
+    {
+        Camera.main.transform.position = new Vector3(rb.transform.position.x, rb.transform.position.y, -10f);
+
     }
 
     void FixedUpdate()
