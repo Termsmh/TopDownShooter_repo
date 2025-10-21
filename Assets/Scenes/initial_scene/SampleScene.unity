@@ -561,6 +561,11 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.39
+--- !u!4 &1248038847 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5415350771380240362, guid: e4c86fe4336bdce47964cffacf3cc6aa, type: 3}
+  m_PrefabInstance: {fileID: 1252919283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1252919283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -654,6 +659,63 @@ Transform:
   - {fileID: 912651481}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1722855161
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1184915888802949733, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_Name
+      value: Crowbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.9599955
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7314501
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346948852397047727, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
 --- !u!1 &1727619975
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +1018,7 @@ GameObject:
   - component: {fileID: 2138427303}
   - component: {fileID: 2138427302}
   - component: {fileID: 2138427301}
+  - component: {fileID: 2138427305}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1081,6 +1144,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2138427305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138427300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617f5d09e98ef344cadefbb9dceaf1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultTarget: {fileID: 1248038847}
 --- !u!1001 &5800178255405484818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1154,3 +1230,4 @@ SceneRoots:
   - {fileID: 1566281763}
   - {fileID: 1252919283}
   - {fileID: 1237863872}
+  - {fileID: 1722855161}

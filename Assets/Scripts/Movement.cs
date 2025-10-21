@@ -5,14 +5,18 @@ public class Movement : MonoBehaviour
 {
 
     public float moveSpeed;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private Vector2 moveDirection;
-   
 
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     void Update()
     {
-        LockCameraOnPlayer();
+        //LockCameraOnPlayer();
         LookAtMouse();
         ProcessInputs();
 
@@ -42,7 +46,9 @@ public class Movement : MonoBehaviour
 
     void Move()
     {
-        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        
+       rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+       
     }
 
     void ProcessInputs() //check for input
