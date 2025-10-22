@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveDirection;
 
+    [SerializeField] Animator animator;
+
 
     private void Start()
     {
@@ -32,11 +34,7 @@ public class Movement : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    private void LockCameraOnPlayer()
-    {
-        Camera.main.transform.position = new Vector3(rb.transform.position.x, rb.transform.position.y, -10f);
-
-    }
+    
 
     void FixedUpdate()
     {
@@ -57,6 +55,12 @@ public class Movement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY).normalized; // makes diagonal speed the same
+
+        if (moveX != 0 || moveY != 0)
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        else animator.SetBool("IsMoving", false);
         
     }
 }
