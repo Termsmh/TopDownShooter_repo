@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     private Vector2 moveDirection;
 
     [SerializeField] Animator animator;
+    
 
 
     private void Start()

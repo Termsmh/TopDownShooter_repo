@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5415350771380240362}
   - component: {fileID: 7363692489259478883}
   - component: {fileID: 1059469214431884187}
+  - component: {fileID: 1048534094929315616}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -74,7 +75,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  rb: {fileID: 7363692489259478883}
+  animator: {fileID: 6380928906384441557}
+--- !u!58 &1048534094929315616
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536517729635680175}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.39
 --- !u!1001 &5230918697668594973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87,6 +124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlsWorkOnThisMore
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 269b32595b7bac143afd8d0ca00d6866, type: 2}
     - target: {fileID: 7878350319992209165, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -135,5 +176,10 @@ PrefabInstance:
 --- !u!4 &2720861406881919504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
+  m_PrefabInstance: {fileID: 5230918697668594973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6380928906384441557 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1160356261127867848, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
   m_PrefabInstance: {fileID: 5230918697668594973}
   m_PrefabAsset: {fileID: 0}
