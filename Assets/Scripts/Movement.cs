@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -8,13 +9,21 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveDirection;
 
-    [SerializeField] Animator animator;
     
+
+    
+
+
+    Animator animator;
+
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        CheckAnimator();
+
     }
     // Update is called once per frame
     void Update()
@@ -22,7 +31,8 @@ public class Movement : MonoBehaviour
         //LockCameraOnPlayer();
         LookAtMouse();
         ProcessInputs();
-
+        CheckAnimator();
+        
 
 
     }
@@ -35,7 +45,7 @@ public class Movement : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    
+
 
     void FixedUpdate()
     {
@@ -45,15 +55,16 @@ public class Movement : MonoBehaviour
 
     void Move()
     {
-        
-       rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-       
+
+        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+
     }
 
     void ProcessInputs() //check for input
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+
 
         moveDirection = new Vector2(moveX, moveY).normalized; // makes diagonal speed the same
 
@@ -62,6 +73,12 @@ public class Movement : MonoBehaviour
             animator.SetBool("IsMoving", true);
         }
         else animator.SetBool("IsMoving", false);
-        
+
+
+    }
+
+    void CheckAnimator()
+    {
+        animator = rb.gameObject.GetComponentInChildren<Animator>(false);
     }
 }
