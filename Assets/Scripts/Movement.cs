@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
 
-    PlayerController PlayerController;
+    
 
     public float moveSpeed;
     private Rigidbody2D rb;
@@ -81,6 +81,6 @@ public class Movement : MonoBehaviour
 
     void CheckAnimator()
     {
-        animator = PlayerController.currentState.GetComponent<Animator>();
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 }

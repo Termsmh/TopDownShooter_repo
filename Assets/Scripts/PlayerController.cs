@@ -3,9 +3,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] states;
-
-    public GameObject currentState;
+    GameObject[] sprites;
+    int itester = 0;
+    public GameObject currentSprite;
 
 
 
@@ -14,23 +14,23 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        currentState = states[1];
+        
+        SwapStates(itester);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            foreach (var state in states)
-            {
-                if (currentState == state)
-                {
-                    state.SetActive(false);
-                    SwapStates(0);
+            
                     
-                }
+                    itester++;
+                    itester %= sprites.Length;
+                    SwapStates(itester);
+                    
+                
 
-            }
+            
         }
 
         
@@ -39,8 +39,12 @@ public class PlayerController : MonoBehaviour
     void SwapStates(int a)
     {
 
-        currentState = states[a];
-        currentState.SetActive(true);
+        currentSprite = sprites[a];
+        foreach (var state in sprites)
+        {
+            state.SetActive(false);
+        }
+        currentSprite.SetActive(true);
         
     }
 

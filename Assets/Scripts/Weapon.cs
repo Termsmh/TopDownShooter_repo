@@ -1,18 +1,16 @@
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
-    [SerializeField] protected float cooldown;
+    Vector2 velocity;
 
-    public virtual void Attack()
-    {
-        Debug.Log("BOOM");
-    }
+    
 
-    public virtual void Throw()
-    {
-        Debug.Log("Throwwwwww");
-    }
+    // somehow make weapon get associated with the game object sprite of player/enemy so that it remembers
+    // what i have so i can throw it
+
+
+
 
 
 }
