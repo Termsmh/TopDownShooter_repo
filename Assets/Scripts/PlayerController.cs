@@ -5,9 +5,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject[] states;
 
-    GameObject currentState;
+    public GameObject currentState;
+
+
 
     Animator animator;
+
 
     private void Start()
     {
@@ -29,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
             }
         }
+
+        
     }
 
     void SwapStates(int a)

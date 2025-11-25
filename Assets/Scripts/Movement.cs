@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
 
+    PlayerController PlayerController;
+
     public float moveSpeed;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
@@ -79,6 +81,6 @@ public class Movement : MonoBehaviour
 
     void CheckAnimator()
     {
-        animator = rb.gameObject.GetComponentInChildren<Animator>(false);
+        animator = PlayerController.currentState.GetComponent<Animator>();
     }
 }
