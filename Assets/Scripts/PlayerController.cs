@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         
         SwapStates(itester);
+        
     }
 
     private void Update()
@@ -27,11 +28,15 @@ public class PlayerController : MonoBehaviour
                     itester++;
                     itester %= sprites.Length;
                     SwapStates(itester);
-                    
-                
-
             
         }
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            Attack();
+
+
+        }
+       
 
         
     }
@@ -46,6 +51,26 @@ public class PlayerController : MonoBehaviour
         }
         currentSprite.SetActive(true);
         
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+                enemy.Die();
+            }
+        }
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
+
+
     }
 
     void AnimatorHandler()
