@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,8 +15,13 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        
-        SwapStates(itester);
+        if (currentSprite == null)
+        {
+
+            SwapStates(0);
+        }
+
+        animator = currentSprite.GetComponent<Animator>();
         
     }
 
@@ -50,6 +56,7 @@ public class PlayerController : MonoBehaviour
             state.SetActive(false);
         }
         currentSprite.SetActive(true);
+        animator = currentSprite.GetComponent<Animator>();
         
     }
 
@@ -69,6 +76,8 @@ public class PlayerController : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
+        
+        animator.SetBool("IsLeft", !animator.GetBool("IsLeft"));
 
 
     }
