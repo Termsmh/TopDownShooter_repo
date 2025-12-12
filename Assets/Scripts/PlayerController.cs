@@ -15,11 +15,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if (currentSprite == null)
-        {
 
-            SwapStates(0);
-        }
+
+        SwapStates(itester);
+        
 
         animator = currentSprite.GetComponent<Animator>();
         
@@ -39,7 +38,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) 
         {
             Attack();
-
+            
 
         }
        
@@ -62,8 +61,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
+            
 
             if (Input.GetMouseButtonDown(0))
             {

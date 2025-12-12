@@ -180,11 +180,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce786e7bc88becc4582d97171d4b8df7, type: 3}
---- !u!1 &137705965 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2393296525328763644, guid: e4c86fe4336bdce47964cffacf3cc6aa, type: 3}
-  m_PrefabInstance: {fileID: 1252919283}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &147668236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -584,6 +579,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce786e7bc88becc4582d97171d4b8df7, type: 3}
+--- !u!1 &592958137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2895686498399787637, guid: e4c86fe4336bdce47964cffacf3cc6aa, type: 3}
+  m_PrefabInstance: {fileID: 1252919283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1130,7 @@ PrefabInstance:
     - target: {fileID: 2138836878951095044, guid: e4c86fe4336bdce47964cffacf3cc6aa, type: 3}
       propertyPath: currentSprite
       value: 
-      objectReference: {fileID: 137705965}
+      objectReference: {fileID: 592958137}
     - target: {fileID: 2393296525328763644, guid: e4c86fe4336bdce47964cffacf3cc6aa, type: 3}
       propertyPath: m_IsActive
       value: 1
