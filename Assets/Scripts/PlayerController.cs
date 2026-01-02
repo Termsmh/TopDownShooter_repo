@@ -1,4 +1,5 @@
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -41,12 +42,25 @@ public class PlayerController : MonoBehaviour
             
 
         }
+
+        if (Input.GetMouseButtonDown(1)) 
+        {
+            if (currentSprite == sprites[0])
+            {
+                Debug.Log("swap" + Crowbar.index);
+                SwapStates(Crowbar.index);
+            }
+            else if (currentSprite == sprites[Crowbar.index])
+            {
+                currentSprite.GetComponent<Weapon>().Throw();
+            }
+        }
        
 
         
     }
 
-    void SwapStates(int a)
+    public void SwapStates(int a)
     {
 
         currentSprite = sprites[a];
@@ -59,25 +73,18 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-                enemy.Die();
-            }
-        }
-    }
+    
+    
 
     void Attack()
     {
-        animator.SetTrigger("Attack");
+        //animator.SetTrigger("Attack");
         
-        animator.SetBool("IsLeft", !animator.GetBool("IsLeft"));
+        //animator.SetBool("IsLeft", !animator.GetBool("IsLeft"));
+        
+        currentSprite.GetComponent<Weapon>().Attack();
+        
+        
 
 
     }

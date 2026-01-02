@@ -4,9 +4,14 @@ public abstract class Weapon : MonoBehaviour
 {
 
     
+
+    public GameObject weaponSprite;
+    public bool lethalThrow;
+    public float cooldown;
+    
     public abstract void Attack();
 
-    float cooldown;
+    
 
     public abstract void Throw();
 

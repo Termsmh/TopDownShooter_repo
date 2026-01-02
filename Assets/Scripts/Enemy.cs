@@ -20,10 +20,12 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        animator.SetBool("IsDead", true);
-        setter.target = null;
-        var colls = GetComponents<Collider2D>();
-        foreach (Collider2D coll in colls) { coll.enabled = false; }
+        // animator.SetBool("IsDead", true);
+        /* setter.target = null;
+         var colls = GetComponents<Collider2D>();
+         foreach (Collider2D coll in colls) { coll.enabled = false; }*/
+        Debug.Log("ded");
+        Destroy(gameObject);
         
     }
 
