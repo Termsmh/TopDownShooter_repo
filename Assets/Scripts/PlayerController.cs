@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject[] sprites;
     int itester = 0;
+
+    private float lastAttackTime = -99f;
+
     public GameObject currentSprite;
 
 
@@ -27,10 +30,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+
+
+
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             
-                    
+            //testing purposes        
                     itester++;
                     itester %= sprites.Length;
                     SwapStates(itester);
@@ -78,16 +85,20 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
-        //animator.SetTrigger("Attack");
-        
-        //animator.SetBool("IsLeft", !animator.GetBool("IsLeft"));
+
+        if (Time.time < lastAttackTime + currentSprite.GetComponent<Weapon>().cooldown)
+        {
+            Debug.Log("cooldown: " + (lastAttackTime + currentSprite.GetComponent<Weapon>().cooldown - Time.time));
+
+            return;
+        }
         
         currentSprite.GetComponent<Weapon>().Attack();
-        
-        
-
+        lastAttackTime = Time.time;
 
     }
+
+
 
     void AnimatorHandler()
     {

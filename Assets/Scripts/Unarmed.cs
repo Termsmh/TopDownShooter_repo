@@ -1,45 +1,32 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Crowbar : Weapon
+public class Unarmed : Weapon
 {
+
     [SerializeField]
     private GameObject AttackField;
-    
+
     [SerializeField]
     private PlayerController playerController;
 
-    public readonly static int index = 1;
-    
+    public readonly static int index = 0;
+
     private Animator animator;
+
 
     private void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    
-
-
-
     public override void Attack()
     {
         animator.SetTrigger("Attack");
-
-        animator.SetBool("IsLeft", !animator.GetBool("IsLeft"));
-
     }
 
     public override void Throw()
     {
-
-        var pos = gameObject.transform.position;
-
-        
-
-        Instantiate(weaponSprite, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
-
-        playerController.SwapStates(0);
+        //pick up nearby weapon
     }
 
     
