@@ -5,7 +5,7 @@ public abstract class Weapon : MonoBehaviour
 
     
 
-    public GameObject weaponSprite;
+    public Rigidbody2D weaponSprite;
     public bool lethalThrow;
     public float cooldown;
     

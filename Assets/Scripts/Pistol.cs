@@ -1,56 +1,56 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using static UnityEditor.PlayerSettings;
 
-public class Crowbar : MeleeWeapon
+public class Pistol : Weapon
 {
-    [SerializeField]
-    private GameObject AttackField;
-    
+
     [SerializeField]
     private PlayerController playerController;
 
-    public readonly static int index = 1;
+    public readonly static int index = 2;
 
-    
     private Animator animator;
+
+    [SerializeField]
+    private int ammoMax;
+
+    [SerializeField]
+    private int ammo;
+
+    [SerializeField]
+    private GameObject bulletOrigin;
+
+    [SerializeField]
+    private Bullet bullet;
+
+    public bool fromPlayer;
+
 
     private void Start()
     {
-        
         animator = GetComponent<Animator>();
     }
-
-
-
     public override void Attack()
     {
+        if (ammo > 0)
+        {
         animator.SetTrigger("Attack");
-
-        animator.SetBool("IsLeft", !animator.GetBool("IsLeft"));
-
+            ammo--;
+        }
     }
-
-
 
     public override void Throw()
     {
-
         var pos = playerController.transform.position;
         var rot = playerController.transform.rotation;
 
-        
-        
+
+
 
         var thing = Instantiate(weaponSprite, pos, rot);
-
-        
-
-        //thing.AddForce()
-
         playerController.SwapStates(0);
+
     }
 
-    
-    
+
 }

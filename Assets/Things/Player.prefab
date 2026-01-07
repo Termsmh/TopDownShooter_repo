@@ -145,13 +145,14 @@ GameObject:
   - component: {fileID: 9104781713771596195}
   - component: {fileID: 2723665194948769812}
   - component: {fileID: 6593384000826897426}
+  - component: {fileID: 1290660363878181099}
   m_Layer: 0
   m_Name: Guy_pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9104781713771596195
 Transform:
   m_ObjectHideFlags: 0
@@ -164,7 +165,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2341608228153367800}
   m_Father: {fileID: 5415350771380240362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2723665194948769812
@@ -210,7 +212,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -9071446964855048690, guid: 92c275a772f7f3342a7f344afa814137, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -244,6 +246,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1290660363878181099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348454114824691323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98afcd26d0d6dc445affd0f354e36f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSprite: {fileID: 0}
+  lethalThrow: 0
+  cooldown: 0
+  playerController: {fileID: 0}
+  ammo: 0
 --- !u!1 &2393296525328763644
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +341,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -8060469016446543525, guid: 3844b85121a5094499452d839c28b72d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -368,11 +387,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3080913416a7849a305f06e520a497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 0}
+  weaponSprite: {fileID: 1184915888802949733, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
   lethalThrow: 0
-  cooldown: 0
+  cooldown: 0.3
   AttackField: {fileID: 306545660083048824}
   playerController: {fileID: 2138836878951095044}
+--- !u!1 &5996700706698229759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2341608228153367800}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2341608228153367800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996700706698229759}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9104781713771596195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6390738525717068483
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,12 +702,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 269b32595b7bac143afd8d0ca00d6866, type: 2}
+    - target: {fileID: 3626916397498700004, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -731,3 +785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f864e882bcf2fd847a17b27ea8cde6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSprite: {fileID: 0}
+  lethalThrow: 0
+  cooldown: 0.5
+  AttackField: {fileID: 6390738525717068483}
+  playerController: {fileID: 2138836878951095044}

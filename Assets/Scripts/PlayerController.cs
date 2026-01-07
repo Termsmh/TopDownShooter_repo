@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("swap" + Crowbar.index);
                 SwapStates(Crowbar.index);
             }
-            else if (currentSprite == sprites[Crowbar.index])
+            else 
             {
                 currentSprite.GetComponent<Weapon>().Throw();
             }
@@ -100,9 +100,9 @@ public class PlayerController : MonoBehaviour
 
 
 
-    void AnimatorHandler()
+    public void Die()
     {
         
-        animator.SetBool("IsMoving", true); 
+         
     }
 }

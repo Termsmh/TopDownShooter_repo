@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Unarmed : Weapon
+public class Unarmed : MeleeWeapon
 {
 
     [SerializeField]
@@ -16,6 +16,7 @@ public class Unarmed : Weapon
 
     private void Start()
     {
+        
         animator = GetComponent<Animator>();
     }
 
@@ -26,7 +27,7 @@ public class Unarmed : Weapon
 
     public override void Throw()
     {
-        //pick up nearby weapon
+        //pick up nearby weapon 
     }
 
     

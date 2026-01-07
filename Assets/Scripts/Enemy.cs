@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+
+
     public void Die()
     {
         // animator.SetBool("IsDead", true);
@@ -27,6 +29,12 @@ public class Enemy : MonoBehaviour
         Debug.Log("ded");
         Destroy(gameObject);
         
+    }
+
+    void Attack()
+    {
+       // PlayerController o = GetComponent<PlayerController>();
+       // o.Die();
     }
 
     // Update is called once per frame

@@ -12,10 +12,10 @@ public class SpriteBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        faceMovement();
+        FaceMovement();
     }
 
-    private void faceMovement()
+    private void FaceMovement()
     {
         direction = _aiPath.desiredVelocity;
         transform.right = direction;
