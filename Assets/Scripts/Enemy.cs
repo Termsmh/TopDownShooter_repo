@@ -7,8 +7,8 @@ using System;
 public class Enemy : MonoBehaviour
 {
     Animator animator;
-    
 
+    private bool angry;
     [SerializeField] private int hp = 1;
     AIDestinationSetter setter;
 
@@ -44,9 +44,15 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("i shall chase u rahhhhhh");
             setter.target = collider.gameObject.transform;
-            
+            angry = true;
         }
     }
+    private void Update()
+    {
+        if (angry)
+        {
 
+        }
+    }
 
 }

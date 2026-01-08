@@ -1,12 +1,31 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody2D rb;
     
-    public float force;
+    public Rigidbody2D rb;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (!collision.gameObject.tag.Equals("Player"))
+        {
+            if (collision.gameObject.tag.Equals("Enemy"))
+            {
+                Enemy e = collision.gameObject.GetComponent<Enemy>();
+                e.Die();
+            }
+         
+
+            Debug.Log("wallboomawa");
+            Destroy(gameObject);
+
+        }
+        
+        
+    }
+
+
+
 }

@@ -196,6 +196,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1928754163321473269, guid: ce786e7bc88becc4582d97171d4b8df7, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928754163321473269, guid: ce786e7bc88becc4582d97171d4b8df7, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6269954833948621080, guid: ce786e7bc88becc4582d97171d4b8df7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.95
@@ -671,6 +679,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8349167359303520337, guid: eba97b86409785943b398ae24531127a, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7915437952402669646, guid: eba97b86409785943b398ae24531127a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.38881752
@@ -1139,6 +1151,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1290660363878181099, guid: e4c86fe4336bdce47964cffacf3cc6aa, type: 3}
+      propertyPath: ammo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290660363878181099, guid: e4c86fe4336bdce47964cffacf3cc6aa, type: 3}
       propertyPath: bullet
       value: 
       objectReference: {fileID: 5671601855413538235, guid: e80f73c76a74ee941b8f3eef7fe76277, type: 3}
@@ -1361,6 +1377,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6252283850861788969, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1184915888802949733, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
       propertyPath: m_Name
       value: Crowbar
@@ -1432,6 +1452,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6252283850861788969, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1184915888802949733, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
       propertyPath: m_Name
       value: Crowbar (1)
@@ -1761,6 +1785,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2714643554706178606, guid: b359864e20540934282dba65bef70fed, type: 3}
+      propertyPath: detailedGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604308839245002974, guid: b359864e20540934282dba65bef70fed, type: 3}
+      propertyPath: alwaysDrawGizmos
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8903414759295598520, guid: b359864e20540934282dba65bef70fed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.598
@@ -1887,6 +1919,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1724495512285275677, guid: e80f73c76a74ee941b8f3eef7fe76277, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4984195518414998230, guid: e80f73c76a74ee941b8f3eef7fe76277, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.238
