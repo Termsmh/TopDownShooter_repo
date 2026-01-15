@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -8,23 +9,25 @@ public class Bullet : MonoBehaviour
 
     public float timeToDestroy = 3f;
 
-    private float startTime;
+    
+
+    
 
     private void Start()
     {
-        startTime = Time.time;
+        
+
+        StartCoroutine(BulletCoroutine());
 
     }
 
-    private void Update()
+    IEnumerator BulletCoroutine()
     {
-        float timeSinceSpawn = Time.time - startTime;
-
-        if (timeSinceSpawn < timeToDestroy)
-        {
-            Destroy(gameObject);
-        }
+        yield return new WaitForSeconds(timeToDestroy);
+        Destroy(gameObject);
     }
+
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -38,20 +41,12 @@ public class Bullet : MonoBehaviour
             }
 
 
-            Debug.Log("wallboomawa");
-            Destroy(gameObject);
+            Debug.Log(collision.gameObject.name);
+                Destroy(gameObject);
+            
 
         }
-        else
-        {
-            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-
-            if (player != null)
-            {
-                player.Die();
-            }
-
-        }
+        
     }
 
 

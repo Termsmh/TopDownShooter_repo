@@ -52,15 +52,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1)) 
         {
-            if (currentSprite == sprites[0])
-            {
-                Debug.Log("swap" + Crowbar.index);
-                SwapStates(Crowbar.index);
-            }
-            else 
-            {
+            
                 currentSprite.GetComponent<Weapon>().Throw();
-            }
+            
         }
        
 

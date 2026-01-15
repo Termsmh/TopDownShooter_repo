@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         setter = GetComponent<AIDestinationSetter>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
 
@@ -46,13 +46,25 @@ public class Enemy : MonoBehaviour
             setter.target = collider.gameObject.transform;
             angry = true;
         }
+        
     }
+
+    private void ResetBehaviour()
+    {
+        setter.target = null;
+        angry=false;
+    }
+    
+
     private void Update()
     {
         if (angry)
         {
+            animator.SetBool("IsWalking", true);
 
         }
+        else
+            animator.SetBool("IsWalking", false);
     }
 
 }

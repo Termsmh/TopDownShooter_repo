@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: KnockedOut
+  m_Name: Walk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -22,8 +22,14 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -4029790716899913130, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
-    - time: 0.09
-      value: {fileID: -4029790716899913130, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
+    - time: 0.1
+      value: {fileID: 5228728771028368875, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
+    - time: 0.20000002
+      value: {fileID: 6769534446806604748, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
+    - time: 0.3
+      value: {fileID: 1183639673119908855, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
+    - time: 0.39000002
+      value: {fileID: 1183639673119908855, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,7 +48,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.1
+    m_StopTime: 0.4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

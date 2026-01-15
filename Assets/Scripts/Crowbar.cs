@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,9 +28,22 @@ public class Crowbar : MeleeWeapon
     {
         animator.SetTrigger("Attack");
 
+        var collider = Physics2D.OverlapBox(AttackField.transform.position, new Vector2(1, 2), AttackField.transform.rotation.z + 90);
+
+        if (collider.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("KILL ENEMY");
+            collider.gameObject.GetComponent<Enemy>().Die();
+
+        }
+
+
+
         animator.SetBool("IsLeft", !animator.GetBool("IsLeft"));
 
     }
+   
+
 
 
 

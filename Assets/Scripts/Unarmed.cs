@@ -27,8 +27,23 @@ public class Unarmed : MeleeWeapon
 
     public override void Throw()
     {
+         Collider2D[] cols = Physics2D.OverlapCircleAll(gameObject.transform.position, 2f);
+
+        foreach (Collider2D col in cols) 
+        {
+            if (col.gameObject.GetComponent<Weapon>() != null)
+            {
+                Debug.Log(col.gameObject.name);
+            }
+        }
+
         //pick up nearby weapon 
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(gameObject.transform.position, 2f);
+    }
 
-    
+
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6361301443162556769}
   - component: {fileID: 7873922423461128839}
   - component: {fileID: 6307101713253799483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dumb_enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
   radius: 0.35
   height: 2
   canMove: 1
-  maxSpeed: 8
+  maxSpeed: 7.5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -149,7 +149,7 @@ MonoBehaviour:
     maximumInterval: 2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
-  maxAcceleration: 100
+  maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
@@ -247,10 +247,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blobby_blobbington
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: d9888ef4731e8ad468a555d0851c6190, type: 2}
+      objectReference: {fileID: 9100000, guid: c939f271b6ad9904184964d02c3037b5, type: 2}
     - target: {fileID: 7878350319992209165, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -298,6 +302,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 634223421286965230}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5892693432026307758}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
 --- !u!1 &1450772932720594311 stripped
 GameObject:
@@ -317,8 +324,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _aiPath: {fileID: 4604308839245002974}
+--- !u!114 &5892693432026307758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450772932720594311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.22569108, y: -0.27531815, z: 0}
+  - {x: -0.33447862, y: -0.16286802, z: 0}
+  - {x: -0.33447862, y: 0.17098665, z: 0}
+  - {x: -0.2302022, y: 0.26629496, z: 0}
+  - {x: 0.2121563, y: 0.27531862, z: 0}
+  - {x: 0.3377421, y: 0.13038301, z: 0}
+  - {x: 0.34225368, y: -0.14482164, z: 0}
+  - {x: 0.22569108, y: -0.27531862, z: 0}
+  m_ShapePathHash: 2109562333
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 0}
+  m_ShadowShape2DProvider:
+    rid: -2
+  m_ShadowCastingSource: 1
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.0038875341, y: 0, z: 0}
+      m_Extent: {x: 0.33836615, y: 0.27531862, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.08
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0.08
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 1
+  m_PreviousShadowShape2DSource: {fileID: 5102354234458556939}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!4 &1859939110191867362 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
+  m_PrefabInstance: {fileID: 8402117234472770287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5102354234458556939 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: 61323e2bee1000843bb2058571e746a1, type: 3}
   m_PrefabInstance: {fileID: 8402117234472770287}
   m_PrefabAsset: {fileID: 0}

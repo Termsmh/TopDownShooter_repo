@@ -37,6 +37,7 @@ public class Pistol : RangedWeapon
         animator.SetTrigger("Attack");
             ammo--;
             Bullet b = Instantiate(bullet, bulletOrigin.transform.position, Quaternion.identity);
+            
             b.rb.transform.right = bulletOrigin.transform.right.normalized;
             b.rb.linearVelocity = b.transform.right * bulletSpeed;
             

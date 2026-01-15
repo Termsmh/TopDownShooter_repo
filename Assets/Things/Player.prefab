@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9153265699585196372}
   - component: {fileID: 5930096167213338603}
-  - component: {fileID: 4797393226410818335}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.887, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.9148437, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6384041633108247154}
@@ -78,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.32681516, b: 0.2971698, a: 0.2784314}
+  m_Color: {r: 1, g: 0.32681516, b: 0.2971698, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,52 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4797393226410818335
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306545660083048824}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &2348454114824691323
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,13 +99,13 @@ GameObject:
   - component: {fileID: 2723665194948769812}
   - component: {fileID: 6593384000826897426}
   - component: {fileID: 1290660363878181099}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Guy_pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9104781713771596195
 Transform:
   m_ObjectHideFlags: 0
@@ -262,8 +215,8 @@ MonoBehaviour:
   lethalThrow: 0
   cooldown: 0.25
   gunInfo: {fileID: 0}
-  ammoMax: 8
-  bulletSpeed: 10
+  ammoMax: 888
+  bulletSpeed: 25
   ammo: 0
   playerController: {fileID: 2138836878951095044}
   bulletOrigin: {fileID: 5996700706698229759}
@@ -281,13 +234,13 @@ GameObject:
   - component: {fileID: 1733555752940918802}
   - component: {fileID: 6414749195548505704}
   - component: {fileID: 8738037435007783205}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Guy_crowbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6384041633108247154
 Transform:
   m_ObjectHideFlags: 0
@@ -407,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2341608228153367800}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +393,7 @@ GameObject:
   - component: {fileID: 8112934309336385064}
   - component: {fileID: 8200724417461239152}
   - component: {fileID: 5476669649163745257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,8 +529,8 @@ GameObject:
   - component: {fileID: 1059469214431884187}
   - component: {fileID: 1048534094929315616}
   - component: {fileID: 2138836878951095044}
-  - component: {fileID: 2445779762596356326}
-  m_Layer: 0
+  - component: {fileID: 3373397723873149047}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -695,7 +648,7 @@ MonoBehaviour:
   - {fileID: 2393296525328763644}
   - {fileID: 2348454114824691323}
   currentSprite: {fileID: 2895686498399787637}
---- !u!114 &2445779762596356326
+--- !u!114 &3373397723873149047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -717,39 +670,37 @@ MonoBehaviour:
   m_AlphaCutoff: 0.1
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.24968672, y: -0.7037434, z: 0}
-  - {x: -0.24968672, y: 0.69792205, z: 0}
-  - {x: 0.051805735, y: 0.6765303, z: 0}
-  - {x: 0.2555077, y: 0.45343, z: 0}
-  - {x: 0.2788341, y: -0.5866787, z: 0}
-  - {x: 0.19729567, y: -0.65135264, z: 0}
-  - {x: 0.11001825, y: -0.7031036, z: 0}
-  m_ShapePathHash: 676851867
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: -0.5, y: 0.50000006, z: 0}
+  - {x: 0.5, y: 0.50000006, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  m_ShapePathHash: 0
   m_InstanceId: 0
-  m_ShadowShape2DComponent: {fileID: 0}
+  m_ShadowShape2DComponent: {fileID: 1048534094929315616}
   m_ShadowShape2DProvider:
-    rid: -2
-  m_ShadowCastingSource: 1
+    rid: 3159444821897642063
+  m_ShadowCastingSource: 2
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 0.014573693, y: -0.0029106736, z: 0}
-      m_Extent: {x: 0.2642604, y: 0.7008327, z: 0}
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.22686768, y: 0.22686768, z: 0}
     m_EdgeProcessing: 1
-    m_TrimEdge: 0
+    m_TrimEdge: 0.16
     m_FlipX: 0
     m_FlipY: 0
     m_InitialTrim: 0
-  m_CastingOption: 1
-  m_PreviousTrimEdge: 0
+  m_CastingOption: 2
+  m_PreviousTrimEdge: 0.16
   m_PreviousEdgeProcessing: 1
-  m_PreviousShadowCastingSource: 1
-  m_PreviousShadowShape2DSource: {fileID: 0}
+  m_PreviousShadowCastingSource: 2
+  m_PreviousShadowShape2DSource: {fileID: 1048534094929315616}
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 3159444821897642063
+      type: {class: ShadowShape2DProvider_Collider2D, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 
 --- !u!1001 &5230918697668594973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -761,6 +712,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_Name
       value: Guy_unarmed
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_IsActive
