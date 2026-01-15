@@ -258,11 +258,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98afcd26d0d6dc445affd0f354e36f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 0}
+  weaponSprite: {fileID: -8349167359303520337, guid: eba97b86409785943b398ae24531127a, type: 3}
   lethalThrow: 0
-  cooldown: 0
-  playerController: {fileID: 0}
+  cooldown: 0.25
+  gunInfo: {fileID: 0}
+  ammoMax: 8
+  bulletSpeed: 10
   ammo: 0
+  playerController: {fileID: 2138836878951095044}
+  bulletOrigin: {fileID: 5996700706698229759}
+  bullet: {fileID: 5671601855413538235, guid: e80f73c76a74ee941b8f3eef7fe76277, type: 3}
+  fromPlayer: 1
 --- !u!1 &2393296525328763644
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3080913416a7849a305f06e520a497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 1184915888802949733, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+  weaponSprite: {fileID: -6252283850861788969, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
   lethalThrow: 0
   cooldown: 0.3
   AttackField: {fileID: 306545660083048824}
@@ -417,7 +423,7 @@ Transform:
   m_GameObject: {fileID: 5996700706698229759}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.281, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -570,6 +576,7 @@ GameObject:
   - component: {fileID: 1059469214431884187}
   - component: {fileID: 1048534094929315616}
   - component: {fileID: 2138836878951095044}
+  - component: {fileID: 2445779762596356326}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -688,6 +695,61 @@ MonoBehaviour:
   - {fileID: 2393296525328763644}
   - {fileID: 2348454114824691323}
   currentSprite: {fileID: 2895686498399787637}
+--- !u!114 &2445779762596356326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536517729635680175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.24968672, y: -0.7037434, z: 0}
+  - {x: -0.24968672, y: 0.69792205, z: 0}
+  - {x: 0.051805735, y: 0.6765303, z: 0}
+  - {x: 0.2555077, y: 0.45343, z: 0}
+  - {x: 0.2788341, y: -0.5866787, z: 0}
+  - {x: 0.19729567, y: -0.65135264, z: 0}
+  - {x: 0.11001825, y: -0.7031036, z: 0}
+  m_ShapePathHash: 676851867
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 0}
+  m_ShadowShape2DProvider:
+    rid: -2
+  m_ShadowCastingSource: 1
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.014573693, y: -0.0029106736, z: 0}
+      m_Extent: {x: 0.2642604, y: 0.7008327, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 1
+  m_PreviousShadowShape2DSource: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1001 &5230918697668594973
 PrefabInstance:
   m_ObjectHideFlags: 0
