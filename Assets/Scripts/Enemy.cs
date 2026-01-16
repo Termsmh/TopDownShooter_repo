@@ -26,8 +26,15 @@ public class Enemy : MonoBehaviour
         /* setter.target = null;
          var colls = GetComponents<Collider2D>();
          foreach (Collider2D coll in colls) { coll.enabled = false; }*/
+
+        hp--;
+        Debug.Log("hp left" + hp);
+
+        if (hp  <= 0)
+        {
         Debug.Log("ded");
         Destroy(gameObject);
+        }
         
     }
 

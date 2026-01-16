@@ -39,11 +39,11 @@ public class Unarmed : MeleeWeapon
 
         //pick up nearby weapon 
     }
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(gameObject.transform.position, 2f);
-    }
+    }*/
 
 
 }

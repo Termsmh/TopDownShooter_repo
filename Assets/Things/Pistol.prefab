@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7915437952402669646}
   - component: {fileID: -8349167359303520337}
   - component: {fileID: 7550788932390940893}
+  - component: {fileID: 1986579524372238175}
   m_Layer: 7
   m_Name: Pistol
   m_TagString: Untagged
@@ -74,6 +75,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoLeft: 0
+--- !u!58 &1986579524372238175
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060373260549289669}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.38
 --- !u!1001 &8795989302548235170
 PrefabInstance:
   m_ObjectHideFlags: 0
