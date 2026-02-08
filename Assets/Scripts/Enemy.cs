@@ -7,9 +7,9 @@ using System;
 public class Enemy : MonoBehaviour
 {
     Animator animator;
-
+    private bool walks = true;
     private bool angry;
-    [SerializeField] private int hp = 1;
+    public int hp = 1;
     AIDestinationSetter setter;
 
     private void Start()
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    public void Die()
+    public virtual void Die()
     {
         // animator.SetBool("IsDead", true);
         /* setter.target = null;
@@ -63,8 +63,12 @@ public class Enemy : MonoBehaviour
     }
     
 
-    private void Update()
+    public virtual void Update()
     {
+        if (walks)
+        {
+
+
         if (angry)
         {
             animator.SetBool("IsWalking", true);
@@ -72,6 +76,7 @@ public class Enemy : MonoBehaviour
         }
         else
             animator.SetBool("IsWalking", false);
+        }
     }
 
 }

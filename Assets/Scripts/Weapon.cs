@@ -3,9 +3,9 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
 
-    
+    public LayerMask enemyMask;
 
-    public Rigidbody2D weaponSprite;
+    public GameObject weaponSprite;
     public bool lethalThrow;
     public float cooldown;
     
@@ -14,6 +14,8 @@ public abstract class Weapon : MonoBehaviour
     
 
     public abstract void Throw();
+
+    public abstract void Check(GameObject obj);
 
     
 

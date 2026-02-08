@@ -7,8 +7,8 @@ public class Pistol : RangedWeapon
     [SerializeField]
     private PlayerController playerController;
 
-    
 
+    [SerializeField]
     public readonly static int index = 2;
 
     private Animator animator;
@@ -49,13 +49,32 @@ public class Pistol : RangedWeapon
         var pos = playerController.transform.position;
         var rot = playerController.transform.rotation;
 
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 throwDirection = mouseWorldPos - pos;
 
 
 
-        var thing = Instantiate(weaponSprite, pos, rot);
+
+
+        weaponSprite.transform.position = pos;
+
+        weaponSprite.GetComponent<WeaponThrow>().Throw(throwDirection);
+
+        weaponSprite.GetComponent<GunInfo>().ammoLeft = ammo;
+
+
+
         playerController.SwapStates(0);
 
     }
 
+    
 
+    public override void Check(GameObject obj)
+    {
+        weaponSprite = obj;
+        gunInfo = obj.GetComponent<GunInfo>();
+
+        ammo = gunInfo.ammoLeft;
+    }
 }

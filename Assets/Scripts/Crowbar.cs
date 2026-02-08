@@ -28,14 +28,23 @@ public class Crowbar : MeleeWeapon
     {
         animator.SetTrigger("Attack");
 
-        var collider = Physics2D.OverlapBox(AttackField.transform.position, new Vector2(1, 2), AttackField.transform.rotation.z + 90);
+        Collider2D[] collider = Physics2D.OverlapBoxAll(AttackField.transform.position, new Vector2(1, 2.5f), AttackField.transform.eulerAngles.z, enemyMask);
 
-        if (collider.gameObject.CompareTag("Enemy"))
+        foreach (var col in collider)
         {
-            Debug.Log("KILL ENEMY");
-            collider.gameObject.GetComponent<Enemy>().Die();
+            
+        if (col.isTrigger) continue;
 
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("KILL ENEMY");
+                col.gameObject.GetComponent<Enemy>().Die();
+
+            }
         }
+
+
+        
 
 
 
@@ -44,27 +53,47 @@ public class Crowbar : MeleeWeapon
     }
    
 
-
+    
 
 
     public override void Throw()
     {
-
         var pos = playerController.transform.position;
-        var rot = playerController.transform.rotation;
-
-        
         
 
-        var thing = Instantiate(weaponSprite, pos, rot);
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 throwDirection = mouseWorldPos - pos;
 
-        
 
-        //thing.AddForce()
+
+
+
+        weaponSprite.transform.position = pos;
+
+        weaponSprite.GetComponent<WeaponThrow>().Throw(throwDirection);
+
+
 
         playerController.SwapStates(0);
     }
 
-    
-    
+    public override void Check(GameObject obj)
+    {
+        weaponSprite = obj;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        Matrix4x4 matrix = Gizmos.matrix;
+        Gizmos.matrix = Matrix4x4.TRS(
+            AttackField.transform.position,
+            Quaternion.Euler(0,0,AttackField.transform.eulerAngles.z),
+            Vector3.one);
+
+        Gizmos.DrawWireCube(Vector3.zero, new Vector2(1, 2));
+
+        Gizmos.matrix = matrix;
+    }
 }

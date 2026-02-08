@@ -70,12 +70,26 @@ public class PlayerController : MonoBehaviour
             state.SetActive(false);
         }
         currentSprite.SetActive(true);
+        
         animator = currentSprite.GetComponent<Animator>();
         
     }
+    public void SwapStates(int a, GameObject obj)
+    {
 
-    
-    
+        currentSprite = sprites[a];
+        foreach (var state in sprites)
+        {
+            state.SetActive(false);
+        }
+        currentSprite.SetActive(true);
+        currentSprite.GetComponent<Weapon>().Check(obj);
+        animator = currentSprite.GetComponent<Animator>();
+
+    }
+
+
+
 
     void Attack()
     {

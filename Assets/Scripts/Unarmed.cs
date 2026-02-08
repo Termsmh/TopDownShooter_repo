@@ -31,19 +31,33 @@ public class Unarmed : MeleeWeapon
 
         foreach (Collider2D col in cols) 
         {
-            if (col.gameObject.GetComponent<Weapon>() != null)
+            if (col.gameObject.GetComponent<WeaponGround>() != null)
             {
-                Debug.Log(col.gameObject.name);
+                int index = col.gameObject.GetComponent<WeaponGround>().weaponIndex;
+
+                
+                
+                playerController.SwapStates(index, col.gameObject);
+
+                col.gameObject.transform.position = new Vector3(999, 999, col.gameObject.transform.position.z);
+
+                return;
+                
             }
         }
 
         //pick up nearby weapon 
     }
-    /*private void OnDrawGizmos()
+
+    public override void Check(GameObject obj)
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(gameObject.transform.position, 2f);
-    }*/
+        Debug.Log(obj.name + " not supposed to be anything");
+    }
+    /*private void OnDrawGizmos()
+{
+   Gizmos.color = Color.yellow;
+   Gizmos.DrawSphere(gameObject.transform.position, 2f);
+}*/
 
 
 }
