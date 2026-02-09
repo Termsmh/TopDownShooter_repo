@@ -80,6 +80,7 @@ public class Crowbar : MeleeWeapon
     public override void Check(GameObject obj)
     {
         weaponSprite = obj;
+        Debug.Log("crowbarcheck");
     }
 
     private void OnDrawGizmos()
