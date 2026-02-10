@@ -38,11 +38,11 @@ public class Enemy : MonoBehaviour
         
     }
 
-    void Attack()
+    /*void Attack()
     {
        // PlayerController o = GetComponent<PlayerController>();
        // o.Die();
-    }
+    }*/
 
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collider)
@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
         
     }
 
-    private void ResetBehaviour()
+    public void ResetBehaviour()
     {
         setter.target = null;
         angry=false;

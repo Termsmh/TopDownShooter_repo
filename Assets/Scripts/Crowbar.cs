@@ -38,7 +38,11 @@ public class Crowbar : MeleeWeapon
             if (col.gameObject.CompareTag("Enemy"))
             {
                 Debug.Log("KILL ENEMY");
-                col.gameObject.GetComponent<Enemy>().Die();
+                Debug.Log(col.gameObject.name);
+                if (col.gameObject.GetComponent<Enemy>() != null)
+                    col.gameObject.GetComponent<Enemy>().Die();
+               /* else if (col.gameObject.GetComponentInParent<Enemy>() != null)
+                    col.gameObject.GetComponentInParent<Enemy>().Die();*/
 
             }
         }

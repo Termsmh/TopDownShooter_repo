@@ -211,7 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98afcd26d0d6dc445affd0f354e36f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: -8349167359303520337, guid: eba97b86409785943b398ae24531127a, type: 3}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
+  weaponSprite: {fileID: 9060373260549289669, guid: eba97b86409785943b398ae24531127a, type: 3}
   lethalThrow: 0
   cooldown: 0.25
   gunInfo: {fileID: 0}
@@ -346,8 +349,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3080913416a7849a305f06e520a497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: -6252283850861788969, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
-  lethalThrow: 0
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
+  weaponSprite: {fileID: 1184915888802949733, guid: 761cee0c05fba454694f5f2aa801c820, type: 3}
+  lethalThrow: 1
   cooldown: 0.3
   AttackField: {fileID: 306545660083048824}
   playerController: {fileID: 2138836878951095044}
@@ -802,6 +808,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f864e882bcf2fd847a17b27ea8cde6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
   weaponSprite: {fileID: 0}
   lethalThrow: 0
   cooldown: 0.5
