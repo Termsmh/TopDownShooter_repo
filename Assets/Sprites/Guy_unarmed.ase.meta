@@ -2,7 +2,22 @@ fileFormatVersion: 2
 guid: f16105de9f5ae054b8a33afe92a9c34f
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Attack
+    second: {fileID: 7400000, guid: 733f8cdaa6333e845aa80b5e3978a22d, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Still
+    second: {fileID: 7400000, guid: 6a2f81edc209df64d9ea13a09acefba9, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Walk
+    second: {fileID: 7400000, guid: 7909032be9307c34a995d2799f86f336, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -98,7 +113,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638995275887053035
+  platformSettingsDirtyTick: 639065011318117707
   textureAssetName: 
   singleSpriteImportData:
   - name: 

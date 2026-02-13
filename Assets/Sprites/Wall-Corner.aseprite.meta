@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a6afb03bb88190840b2c57127815f127
+guid: 96bfafd000c187b4595c99da82b65780
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 32
+    spritePixelsToUnits: 64
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639064985234088686
+  platformSettingsDirtyTick: 639064980925738296
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Door
+  - name: Wall-Corner
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 8
+      width: 32
       height: 32
-    spriteID: e57625de07a74694f965a1ff3ebd5333
+    spriteID: dbd21e127fade5a4cb26c094ca3c99bd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,25 +148,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2624099526
+      value0: 2169911628
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Door
+    name: Wall-Corner
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Door
+    - name: Wall-Corner
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 28
+        x: 16
         y: 16
-        width: 8
+        width: 32
         height: 32
-      spriteId: e57625de07a74694f965a1ff3ebd5333
+      spriteId: dbd21e127fade5a4cb26c094ca3c99bd
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -210,4 +210,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 32, y: 64}
+  previousTextureSize: {x: 64, y: 64}

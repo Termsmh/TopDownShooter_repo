@@ -23,6 +23,7 @@ public class Unarmed : MeleeWeapon
     public override void Attack()
     {
         animator.SetTrigger("Attack");
+        Debug.Log("Attacking with unarmed");
     }
 
     public override void Throw()
