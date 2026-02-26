@@ -3,9 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class LevelManagement : MonoBehaviour
 {
+
+    public static LevelManagement instance;
+
+    
+
+    
+
     public void LoadLevel(string levelName)
     {
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadSceneAsync(levelName);
     }
 
     public void LoadLevel(int levelIndex)

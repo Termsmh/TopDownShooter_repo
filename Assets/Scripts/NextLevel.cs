@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +8,8 @@ public class NextLevel : MonoBehaviour
     public bool active = true;
 
     public LevelManagement levelManagement;
+
+    public Fade fade;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,8 +25,12 @@ public class NextLevel : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
-        yield return new WaitForSeconds(1f);
+
+        fade.FadeIn();
+        yield return new WaitForSeconds(1);
         levelManagement.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        fade.FadeOut();
+        
     }
 
 }
