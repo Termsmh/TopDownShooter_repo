@@ -27,7 +27,7 @@ public class NextLevel : MonoBehaviour
     {
 
         fade.FadeIn();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5f/6f);
         levelManagement.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
         fade.FadeOut();
         

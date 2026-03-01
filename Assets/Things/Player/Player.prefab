@@ -243,7 +243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6384041633108247154
 Transform:
   m_ObjectHideFlags: 0
@@ -636,7 +636,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.39
+  m_Radius: 0.24
 --- !u!114 &2138836878951095044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,7 +690,7 @@ MonoBehaviour:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.22686768, y: 0.22686768, z: 0}
+      m_Extent: {x: 0.07685852, y: 0.07685852, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0.16
     m_FlipX: 0
@@ -725,7 +725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_Controller
