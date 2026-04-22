@@ -82,7 +82,10 @@ public class PlayerController : MonoBehaviour
         {
             state.SetActive(false);
         }
+        Debug.Log(currentSprite.name);
         currentSprite.SetActive(true);
+        Debug.Log(currentSprite.GetComponent<Weapon>().name);
+
         currentSprite.GetComponent<Weapon>().Check(obj);
         animator = currentSprite.GetComponent<Animator>();
 

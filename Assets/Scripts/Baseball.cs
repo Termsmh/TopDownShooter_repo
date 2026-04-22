@@ -1,20 +1,15 @@
-using System.Runtime.CompilerServices;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Crowbar : MeleeWeapon
+public class Baseball : MeleeWeapon
 {
-    
+    public readonly static int index = 3;
 
-    public readonly static int index = 1;
 
-    
-    
+
 
     private void Start()
     {
-        
+
         animator = GetComponent<Animator>();
     }
 
@@ -28,8 +23,8 @@ public class Crowbar : MeleeWeapon
 
         foreach (var col in collider)
         {
-            
-        if (col.isTrigger) continue;
+
+            if (col.isTrigger) continue;
 
             if (col.gameObject.CompareTag("Enemy"))
             {
@@ -37,29 +32,29 @@ public class Crowbar : MeleeWeapon
                 Debug.Log(col.gameObject.name);
                 if (col.gameObject.GetComponent<Enemy>() != null)
                     col.gameObject.GetComponent<Enemy>().Die();
-               /* else if (col.gameObject.GetComponentInParent<Enemy>() != null)
-                    col.gameObject.GetComponentInParent<Enemy>().Die();*/
+                /* else if (col.gameObject.GetComponentInParent<Enemy>() != null)
+                     col.gameObject.GetComponentInParent<Enemy>().Die();*/
 
             }
         }
 
 
-        
+
 
 
 
         animator.SetBool("IsLeft", !animator.GetBool("IsLeft"));
 
     }
-   
 
-    
+
+
 
 
     public override void Throw()
     {
         var pos = playerController.transform.position;
-        
+
 
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 throwDirection = mouseWorldPos - pos;
@@ -80,7 +75,7 @@ public class Crowbar : MeleeWeapon
     public override void Check(GameObject obj)
     {
         weaponSprite = obj;
-        Debug.Log("crowbarcheck");
+        Debug.Log("baseballcheck");
     }
 
     private void OnDrawGizmos()
@@ -90,7 +85,7 @@ public class Crowbar : MeleeWeapon
         Matrix4x4 matrix = Gizmos.matrix;
         Gizmos.matrix = Matrix4x4.TRS(
             AttackField.transform.position,
-            Quaternion.Euler(0,0,AttackField.transform.eulerAngles.z),
+            Quaternion.Euler(0, 0, AttackField.transform.eulerAngles.z),
             Vector3.one);
 
         Gizmos.DrawWireCube(Vector3.zero, new Vector2(1, 2));

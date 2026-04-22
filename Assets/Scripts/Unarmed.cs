@@ -3,15 +3,11 @@ using UnityEngine;
 public class Unarmed : MeleeWeapon
 {
 
-    [SerializeField]
-    private GameObject AttackField;
-
-    [SerializeField]
-    private PlayerController playerController;
+    
 
     public readonly static int index = 0;
 
-    private Animator animator;
+    
 
 
     private void Start()
@@ -37,9 +33,10 @@ public class Unarmed : MeleeWeapon
                 int index = col.gameObject.GetComponent<WeaponGround>().weaponIndex;
 
                 
-                
-                playerController.SwapStates(index, col.gameObject);
+                Debug.Log(index + ", " +col.gameObject);
 
+                playerController.SwapStates(index, col.gameObject);
+                Debug.Log("awa awa");
                 col.gameObject.transform.position = new Vector3(999, 999, col.gameObject.transform.position.z);
 
                 return;
