@@ -9,10 +9,14 @@ public class WeaponThrow : MonoBehaviour
     bool hit = true;
     [SerializeField]
     bool lethalThrow;
+    [SerializeField]
+    float rotationSpeed = 700;
+
+    float rot = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
-    void Awake()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -23,6 +27,7 @@ public class WeaponThrow : MonoBehaviour
         rb.linearVelocity = direction.normalized * speed;
         transform.right = direction;
         hit = false;
+        rot = rotationSpeed;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -35,13 +40,15 @@ public class WeaponThrow : MonoBehaviour
             collision.gameObject.GetComponent<Enemy>().Die();
         }
 
+        
         rb.linearVelocity = Vector2.zero;
+        rot = 0;
         rb.bodyType = RigidbodyType2D.Static;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        rb.transform.Rotate(new Vector3(0, 0, rot) * Time.deltaTime);
     }
 }
