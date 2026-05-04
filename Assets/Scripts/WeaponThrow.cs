@@ -23,6 +23,8 @@ public class WeaponThrow : MonoBehaviour
 
     public void Throw(Vector2 direction)
     {
+        rb = GetComponent<Rigidbody2D>();
+       
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.linearVelocity = direction.normalized * speed;
         transform.right = direction;
@@ -38,11 +40,21 @@ public class WeaponThrow : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().Die();
+            if (gameObject.GetComponent<Explosion>() != null) 
+            {
+                gameObject.GetComponent<Explosion>().Explode();
+            }
         }
 
         
-        rb.linearVelocity = Vector2.zero;
+        //rb.linearVelocity = Vector2.zero;
+
+        
+
+        
+
         rot = 0;
+        rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Static;
     }
 
@@ -50,5 +62,7 @@ public class WeaponThrow : MonoBehaviour
     void Update()
     {
         rb.transform.Rotate(new Vector3(0, 0, rot) * Time.deltaTime);
+        
+        
     }
 }

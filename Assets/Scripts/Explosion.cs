@@ -20,7 +20,11 @@ public class Explosion : MonoBehaviour
     void Update()
     {
         if (isThrown)
+        {
         countdown -= Time.deltaTime;
+
+
+        }
 
         if (countdown < 0)
         {
@@ -33,11 +37,11 @@ public class Explosion : MonoBehaviour
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, radius);
 
         foreach (Collider2D col in cols) {
-            if (col.gameObject.GetComponent<Enemy>() != null) {
+            if (col.gameObject.CompareTag("Enemy")) {
                 col.gameObject.GetComponent<Enemy>().Die();
             }
         }
-
+        Debug.Log("exploded");
         Destroy(gameObject);
 
     }

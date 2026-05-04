@@ -71,7 +71,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.65
+  m_Radius: 0.41
 --- !u!50 &6392478890474070355
 Rigidbody2D:
   serializedVersion: 5
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lethalThrow: 1
+  rotationSpeed: 700
 --- !u!1001 &5358521067592144595
 PrefabInstance:
   m_ObjectHideFlags: 0

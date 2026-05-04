@@ -3,6 +3,10 @@ using UnityEngine;
 public class Grenade : MeleeWeapon
 {
     public readonly static int index = 4;
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public override void Attack()
     {
@@ -12,6 +16,7 @@ public class Grenade : MeleeWeapon
 
     public override void Check(GameObject obj)
     {
+        weaponSprite = obj;
         Debug.Log(obj.name + " not supposed to be anything");
     }
 
@@ -28,19 +33,17 @@ public class Grenade : MeleeWeapon
 
 
         weaponSprite.transform.position = pos;
+        Debug.Log(pos);
 
-        weaponSprite.GetComponent<Explosion>().isThrown = true;
+        Debug.Log("tohorwn");
         weaponSprite.GetComponent<WeaponThrow>().Throw(throwDirection);
+        weaponSprite.GetComponent<Explosion>().isThrown = true;
 
 
         playerController.SwapStates(0);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
 
     // Update is called once per frame
     void Update()

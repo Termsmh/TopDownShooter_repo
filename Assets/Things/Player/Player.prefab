@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 3384415187737667024}
   - component: {fileID: 2374334904599931077}
   m_Layer: 7
-  m_Name: AttackRange (1)
+  m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -947,12 +947,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 3b39f4334338c8140ba3c5f48625762e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: 3b39f4334338c8140ba3c5f48625762e, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 63bc830e416dd474b9c196d4ad580bd4, type: 2}
+    - target: {fileID: 3626916397498700004, guid: 3b39f4334338c8140ba3c5f48625762e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 3b39f4334338c8140ba3c5f48625762e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -963,7 +967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 3b39f4334338c8140ba3c5f48625762e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 3b39f4334338c8140ba3c5f48625762e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1028,7 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   weaponSprite: {fileID: 3245066423871965837, guid: c574933a1e97d8f49bf7c678da2b2a83, type: 3}
   lethalThrow: 0
   cooldown: 0.3
@@ -1053,7 +1057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: f16105de9f5ae054b8a33afe92a9c34f, type: 3}
       propertyPath: m_Controller
@@ -1138,7 +1142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   weaponSprite: {fileID: 0}
   lethalThrow: 0
   cooldown: 0.5
