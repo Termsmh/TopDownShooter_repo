@@ -7,6 +7,11 @@ public class Explosion : MonoBehaviour
     [SerializeField]
     float radius = 5f;
 
+    [SerializeField]
+    float cameraShakeDuration = 2f;
+    [SerializeField]
+    float cameraShakeMagnitude = 0.1f;
+
     float countdown;
     public bool isThrown = false;
 
@@ -40,7 +45,16 @@ public class Explosion : MonoBehaviour
             if (col.gameObject.CompareTag("Enemy")) {
                 col.gameObject.GetComponent<Enemy>().Die();
             }
+            if (col.gameObject.CompareTag("Player"))
+            {
+                col.gameObject.GetComponent<PlayerController>().Die();
+            }
         }
+        
+        var camShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
+        camShake.Shake(cameraShakeDuration, cameraShakeMagnitude);
+
+
         Debug.Log("exploded");
         Destroy(gameObject);
 

@@ -24,6 +24,7 @@ public class Unarmed : MeleeWeapon
 
     public override void Throw()
     {
+
          Collider2D[] cols = Physics2D.OverlapCircleAll(gameObject.transform.position, 2f);
 
         foreach (Collider2D col in cols) 
