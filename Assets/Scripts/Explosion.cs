@@ -8,9 +8,9 @@ public class Explosion : MonoBehaviour
     float radius = 5f;
 
     [SerializeField]
-    float cameraShakeDuration = 2f;
+    float cameraShakeDuration;
     [SerializeField]
-    float cameraShakeMagnitude = 0.1f;
+    float cameraShakeMagnitude;
 
     float countdown;
     public bool isThrown = false;
