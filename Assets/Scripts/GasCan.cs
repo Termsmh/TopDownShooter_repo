@@ -1,17 +1,19 @@
-    using UnityEngine;
+using UnityEngine;
 
-public class Grenade : MeleeWeapon
+public class GasCan : MeleeWeapon
 {
-    public readonly static int index = 4;
+    public readonly static int index = 5;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        GetComponentInParent<Movement>().moveSpeed = 4;
+        animator.speed = 0.5f;
     }
-
     public override void Attack()
     {
         animator.SetTrigger("Attack");
-        Debug.Log("Attacking with grenade");
+        Debug.Log("Attacking with gas can");
     }
 
     public override void Check(GameObject obj)
@@ -39,7 +41,7 @@ public class Grenade : MeleeWeapon
         weaponSprite.GetComponent<WeaponThrow>().Throw(throwDirection);
         weaponSprite.GetComponent<Explosion>().isThrown = true;
 
-
+        GetComponentInParent<Movement>().moveSpeed = 8;
         playerController.SwapStates(0);
     }
 

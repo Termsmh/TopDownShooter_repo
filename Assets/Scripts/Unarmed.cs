@@ -25,20 +25,30 @@ public class Unarmed : MeleeWeapon
     public override void Throw()
     {
 
-         Collider2D[] cols = Physics2D.OverlapCircleAll(gameObject.transform.position, 2f);
-
+         Collider2D[] cols = Physics2D.OverlapCircleAll(gameObject.transform.position, 1f);
+        Collider2D closest = null;
+        float closestDist = Mathf.Infinity;
         foreach (Collider2D col in cols) 
         {
             if (col.gameObject.GetComponent<WeaponGround>() != null)
             {
-                int index = col.gameObject.GetComponent<WeaponGround>().weaponIndex;
+                float distance = Vector2.Distance(transform.position, col.gameObject.transform.position);
+
+                if (distance < closestDist)
+                {
+                    closestDist = distance;
+                    closest = col;
+                }
+
+
+                int index = closest.gameObject.GetComponent<WeaponGround>().weaponIndex;
 
                 
-                Debug.Log(index + ", " +col.gameObject);
+                Debug.Log(index + ", " +closest.gameObject);
 
-                playerController.SwapStates(index, col.gameObject);
+                playerController.SwapStates(index, closest.gameObject);
                 Debug.Log("awa awa");
-                col.gameObject.transform.position = new Vector3(999, 999, col.gameObject.transform.position.z);
+                closest.gameObject.transform.position = new Vector3(999, 999, col.gameObject.transform.position.z);
 
                 return;
                 

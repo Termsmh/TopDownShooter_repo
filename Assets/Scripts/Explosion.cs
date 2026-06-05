@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour
@@ -8,22 +9,39 @@ public class Explosion : MonoBehaviour
     float radius = 5f;
 
     [SerializeField]
+    Camera cam;
+
+    [SerializeField]
+    GameObject explosion;
+
+    [SerializeField]
     float cameraShakeDuration;
     [SerializeField]
     float cameraShakeMagnitude;
 
     float countdown;
     public bool isThrown = false;
+    public bool isTimed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         countdown = timeExplo;
+        if (cam == null)
+        {
+            cam = Camera.main;
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!isTimed)
+        {
+            return;
+        }
+
         if (isThrown)
         {
         countdown -= Time.deltaTime;
@@ -39,9 +57,13 @@ public class Explosion : MonoBehaviour
 
     public void Explode()
     {
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, radius);
+        Physics2D.queriesHitTriggers = false;
+        var expl = Instantiate(explosion, transform.position,Quaternion.identity);
+        expl.transform.localScale = new Vector3(radius - 1, radius - 1, radius - 1);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, radius, LayerMask.GetMask("Enemy", "Player"));
 
         foreach (Collider2D col in cols) {
+
             if (col.gameObject.CompareTag("Enemy")) {
                 col.gameObject.GetComponent<Enemy>().Die();
             }
@@ -51,12 +73,22 @@ public class Explosion : MonoBehaviour
             }
         }
         
-        var camShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
-        camShake.Shake(cameraShakeDuration, cameraShakeMagnitude);
+        
+        cam.GetComponent<CameraShake>().Shake(cameraShakeDuration, cameraShakeMagnitude);
 
+        Physics2D.queriesHitTriggers = true;
 
         Debug.Log("exploded");
         Destroy(gameObject);
 
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;   
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+
+
 }

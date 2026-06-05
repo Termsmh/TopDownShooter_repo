@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
         if (hp  <= 0)
         {
         Debug.Log("ded");
+
         Destroy(gameObject);
         }
         

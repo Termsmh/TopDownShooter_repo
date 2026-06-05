@@ -26,6 +26,7 @@ public class WeaponThrow : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
        
         rb.bodyType = RigidbodyType2D.Dynamic;
+        
         rb.linearVelocity = direction.normalized * speed;
         transform.right = direction;
         hit = false;
@@ -42,6 +43,7 @@ public class WeaponThrow : MonoBehaviour
             collision.gameObject.GetComponent<Enemy>().Die();
             if (gameObject.GetComponent<Explosion>() != null) 
             {
+                
                 gameObject.GetComponent<Explosion>().Explode();
             }
         }
@@ -56,6 +58,7 @@ public class WeaponThrow : MonoBehaviour
         rot = 0;
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Static;
+        
     }
 
     // Update is called once per frame

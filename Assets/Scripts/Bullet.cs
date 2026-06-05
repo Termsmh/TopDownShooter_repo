@@ -40,6 +40,11 @@ public class Bullet : MonoBehaviour
                 e.Die();
             }
 
+            if (collision.gameObject.GetComponent<Explosion>() != null) 
+            {
+                collision.gameObject.GetComponent<Explosion>().Explode();
+            }
+
 
             Debug.Log(collision.gameObject.name);
                 Destroy(gameObject);
