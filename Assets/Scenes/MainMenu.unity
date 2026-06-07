@@ -950,7 +950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &389935537
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3234,8 +3234,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: cd095913705193742810efa40e2300fd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1.09
+  m_Volume: 0.609
+  m_Pitch: 0.71
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -3999,7 +3999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1941898484
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4574,6 +4574,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 964443361}
   - {fileID: 1436234400}
-  - {fileID: 1588425067}
   - {fileID: 675524121}
   - {fileID: 675627856}
+  - {fileID: 1588425067}
