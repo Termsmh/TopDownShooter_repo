@@ -12,5 +12,9 @@ public class SwitchScene : MonoBehaviour
     {
         Application.Quit();
     }
+    public void Test()
+    {
+        Debug.Log("Test, click");
+    }
 
 }
