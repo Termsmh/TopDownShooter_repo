@@ -29,14 +29,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3245066423871965837}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.71552694, w: 0.69858515}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7155282, w: 0.69858384}
   m_LocalPosition: {x: 1.8373654, y: -3.4548297, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6368394795800139138}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 91.373}
 --- !u!58 &7825223534333137828
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141,10 +141,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeExplo: 2
   radius: 2
+  cam: {fileID: 0}
   explosion: {fileID: 6981629936003106335, guid: 8d805f5def7f9714a9715cbcee36216e, type: 3}
-  cameraShakeDuration: 0.4
+  cameraShakeDuration: 0.2
   cameraShakeMagnitude: 1
   isThrown: 0
+  isTimed: 1
 --- !u!1001 &3833848116824861327
 PrefabInstance:
   m_ObjectHideFlags: 0

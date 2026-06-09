@@ -60,16 +60,24 @@ public class Explosion : MonoBehaviour
         Physics2D.queriesHitTriggers = false;
         var expl = Instantiate(explosion, transform.position,Quaternion.identity);
         expl.transform.localScale = new Vector3(radius - 1, radius - 1, radius - 1);
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, radius, LayerMask.GetMask("Enemy", "Player"));
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, radius, LayerMask.GetMask("Enemy", "Player", "Environment"));
 
         foreach (Collider2D col in cols) {
 
             if (col.gameObject.CompareTag("Enemy")) {
                 col.gameObject.GetComponent<Enemy>().Die();
+                continue;
             }
             if (col.gameObject.CompareTag("Player"))
             {
                 col.gameObject.GetComponent<PlayerController>().Die();
+                continue;
+            }
+            if (col.gameObject.CompareTag("Breakable"))
+            {
+                Debug.Log("break boom");
+                col.gameObject.GetComponent<Breakable>().Break();
+                continue;
             }
         }
         
