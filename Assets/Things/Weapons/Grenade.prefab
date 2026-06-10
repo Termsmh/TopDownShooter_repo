@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b52c815959fe940908478691f5dcfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeExplo: 2
+  timeExplo: 1.5
   radius: 2
   cam: {fileID: 0}
   explosion: {fileID: 6981629936003106335, guid: 8d805f5def7f9714a9715cbcee36216e, type: 3}

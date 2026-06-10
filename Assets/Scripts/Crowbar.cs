@@ -37,9 +37,15 @@ public class Crowbar : MeleeWeapon
                 Debug.Log(col.gameObject.name);
                 if (col.gameObject.GetComponent<Enemy>() != null)
                     col.gameObject.GetComponent<Enemy>().Die();
-               /* else if (col.gameObject.GetComponentInParent<Enemy>() != null)
-                    col.gameObject.GetComponentInParent<Enemy>().Die();*/
+               
 
+            }
+            
+            if (col.gameObject.CompareTag("Breakable"))
+            {
+                Debug.Log("break");
+                col.gameObject.GetComponent<Breakable>().MeleeBreak();
+                continue;
             }
         }
 

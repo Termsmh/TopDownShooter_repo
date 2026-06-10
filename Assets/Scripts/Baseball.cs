@@ -19,7 +19,7 @@ public class Baseball : MeleeWeapon
     {
         animator.SetTrigger("Attack");
 
-        Collider2D[] collider = Physics2D.OverlapBoxAll(AttackField.transform.position, new Vector2(1, 2.5f), AttackField.transform.eulerAngles.z, enemyMask);
+        Collider2D[] collider = Physics2D.OverlapBoxAll(AttackField.transform.position, new Vector2(1, 2.5f), AttackField.transform.eulerAngles.z, LayerMask.GetMask("EnemyLayer", "Environment"));
 
         foreach (var col in collider)
         {
@@ -32,9 +32,14 @@ public class Baseball : MeleeWeapon
                 Debug.Log(col.gameObject.name);
                 if (col.gameObject.GetComponent<Enemy>() != null)
                     col.gameObject.GetComponent<Enemy>().Die();
-                /* else if (col.gameObject.GetComponentInParent<Enemy>() != null)
-                     col.gameObject.GetComponentInParent<Enemy>().Die();*/
+                continue;
 
+            }
+            if (col.gameObject.CompareTag("Breakable"))
+            {
+                Debug.Log("break");
+                col.gameObject.GetComponent<Breakable>().MeleeBreak();
+                continue;
             }
         }
 

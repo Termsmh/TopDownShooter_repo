@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     public int hp = 1;
     AIDestinationSetter setter;
 
+    [SerializeField]
+    private GameObject deadSprite;
+
     private void Start()
     {
         setter = GetComponent<AIDestinationSetter>();
@@ -33,6 +36,12 @@ public class Enemy : MonoBehaviour
         if (hp  <= 0)
         {
         Debug.Log("ded");
+
+        if (deadSprite != null)
+            {
+                var dead = Instantiate(deadSprite, transform.position, Quaternion.identity);
+                dead.transform.rotation = transform.rotation;
+            }
 
         Destroy(gameObject);
         }

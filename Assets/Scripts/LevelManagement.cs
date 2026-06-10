@@ -6,9 +6,13 @@ public class LevelManagement : MonoBehaviour
 
     public static LevelManagement instance;
 
-    
+    public GameObject retryScreen;
 
-    
+
+    private void Start()
+    {
+        retryScreen.SetActive(false);
+    }
 
     public void LoadLevel(string levelName)
     {
@@ -31,6 +35,10 @@ public class LevelManagement : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "MainMenu") return;
             LoadLevel("MainMenu");
+        }
+        if (Input.GetKeyDown(KeyCode.T)) 
+        {
+            LoadLevel("testtest");
         }
     }
 }

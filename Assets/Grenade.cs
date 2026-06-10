@@ -35,7 +35,7 @@ public class Grenade : MeleeWeapon
         weaponSprite.transform.position = pos;
         Debug.Log(pos);
 
-        Debug.Log("tohorwn");
+        Debug.Log("thrown");
         weaponSprite.GetComponent<WeaponThrow>().Throw(throwDirection);
         weaponSprite.GetComponent<Explosion>().isThrown = true;
 

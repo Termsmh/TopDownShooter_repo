@@ -2,10 +2,19 @@ using UnityEngine;
 
 public class Breakable : MonoBehaviour
 {
-
-    public void Break()
+    [SerializeField]
+    bool MeleeBreakable;
+    public void ExploBreak()
     {
+        
         Destroy(gameObject);
     }
 
+    public void MeleeBreak()
+    {
+        if (MeleeBreakable)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

@@ -113,7 +113,13 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        RetryScreen();
         Destroy(gameObject);
-        
+
+    }
+
+    private void RetryScreen()
+    {
+        FindAnyObjectByType<LevelManagement>().retryScreen.SetActive(true);
     }
 }
