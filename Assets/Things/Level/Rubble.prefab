@@ -93,6 +93,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MeleeBreakable: 0
+  spawnAmount: 0
+  fragments: []
+  breakSound: {fileID: 0}
 --- !u!1001 &6931949387540158657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,6 +104,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1626593505670391255}
     m_Modifications:
+    - target: {fileID: 653864191618268965, guid: ed3a22d9e0a8a9440b4101353a3cff15, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1970714172561847466, guid: ed3a22d9e0a8a9440b4101353a3cff15, type: 3}
       propertyPath: m_HasRenderer
       value: 1

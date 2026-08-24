@@ -47,15 +47,19 @@ public class WeaponThrow : MonoBehaviour
                 gameObject.GetComponent<Explosion>().Explode();
             }
         }
+        else if (collision.gameObject.CompareTag("Breakable"))
+        {
+            collision.gameObject.GetComponent<Breakable>().Break();
+        }
 
-        
-        //rb.linearVelocity = Vector2.zero;
 
-        
+            //rb.linearVelocity = Vector2.zero;
 
-        
 
-        rot = 0;
+
+
+
+            rot = 0;
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Static;
         

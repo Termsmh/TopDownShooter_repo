@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9031652707846426009}
   m_Layer: 10
   m_Name: Vent
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014499035ad78d84180dbbabe702610c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MeleeBreakable: 1
+  spawnAmount: 5
+  fragments:
+  - {fileID: 3578795898989216848, guid: 964f140ab2087654990b69de5807489a, type: 3}
+  breakSound: {fileID: 5106970410016648206, guid: 120e185f068b4dc43b473e2afe89829c, type: 3}
 --- !u!61 &9031652707846426009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -106,7 +111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: aeefeef85037fdf40a99e5c7140022b1, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: aeefeef85037fdf40a99e5c7140022b1, type: 3}
       propertyPath: m_IsActive

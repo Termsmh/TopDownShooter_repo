@@ -167,17 +167,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press 'R' to Retry
+  m_text: "Press <color=#FFBB32>'R'</color> to \nRetry"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dca84fe9d6d2a034fb7994da7e92111b, type: 2}
+  m_sharedMaterial: {fileID: 3181210850850866403, guid: dca84fe9d6d2a034fb7994da7e92111b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4280822015
+  m_fontColor: {r: 1, g: 0.15566039, b: 0.15566039, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -570,12 +570,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 7071933787185186671}
     m_Modifications:
     - target: {fileID: 721487887107963054, guid: 5e4b241cf58004549823349d13df69a5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 721487887107963054, guid: 5e4b241cf58004549823349d13df69a5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 721487887107963054, guid: 5e4b241cf58004549823349d13df69a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.89
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 721487887107963054, guid: 5e4b241cf58004549823349d13df69a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.49
+      value: -11.86
       objectReference: {fileID: 0}
     - target: {fileID: 721487887107963054, guid: 5e4b241cf58004549823349d13df69a5, type: 3}
       propertyPath: m_LocalPosition.z

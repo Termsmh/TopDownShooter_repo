@@ -9,22 +9,27 @@ public class Crowbar : MeleeWeapon
 
     public readonly static int index = 1;
 
-    
+
+
+
     
 
-    private void Start()
+    private void OnEnable()
     {
-        
-        animator = GetComponent<Animator>();
+        if (ammoDisplay != null) {
+
+            ammoDisplay.ChangeAmmoImage(0);
+            maxAmmoDisplay.ChangeAmmoImage(0);
+        }
     }
-
-
 
     public override void Attack()
     {
         animator.SetTrigger("Attack");
 
-        Collider2D[] collider = Physics2D.OverlapBoxAll(AttackField.transform.position, new Vector2(1, 2.5f), AttackField.transform.eulerAngles.z, enemyMask);
+        Collider2D[] collider = Physics2D.OverlapBoxAll(AttackField.transform.position, new Vector2(AttackField.transform.lossyScale.x, AttackField.transform.lossyScale.y), AttackField.transform.eulerAngles.z, LayerMask.GetMask("EnemyLayer", "Breakable"));
+
+        attackSound.Play();
 
         foreach (var col in collider)
         {
@@ -99,7 +104,7 @@ public class Crowbar : MeleeWeapon
             Quaternion.Euler(0,0,AttackField.transform.eulerAngles.z),
             Vector3.one);
 
-        Gizmos.DrawWireCube(Vector3.zero, new Vector2(1, 2));
+        Gizmos.DrawWireCube(Vector3.zero, new Vector2(AttackField.transform.localScale.x, AttackField.transform.localScale.y));
 
         Gizmos.matrix = matrix;
     }

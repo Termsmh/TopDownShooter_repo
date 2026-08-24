@@ -10,10 +10,16 @@ public class Unarmed : MeleeWeapon
     
 
 
-    private void Start()
+    
+
+    private void OnEnable()
     {
-        
-        animator = GetComponent<Animator>();
+        if (ammoDisplay != null) 
+        {
+        ammoDisplay.ChangeAmmoImage(0);
+        maxAmmoDisplay.ChangeAmmoImage(0);
+        }
+
     }
 
     public override void Attack()
@@ -22,10 +28,10 @@ public class Unarmed : MeleeWeapon
         Debug.Log("Attacking with unarmed");
     }
 
-    public override void Throw()
+    public override void Throw() //actually pick up
     {
 
-         Collider2D[] cols = Physics2D.OverlapCircleAll(gameObject.transform.position, 1f);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(gameObject.transform.position, 1f);
         Collider2D closest = null;
         float closestDist = Mathf.Infinity;
         foreach (Collider2D col in cols) 
@@ -38,23 +44,26 @@ public class Unarmed : MeleeWeapon
                 {
                     closestDist = distance;
                     closest = col;
+                    
                 }
-
-
-                int index = closest.gameObject.GetComponent<WeaponGround>().weaponIndex;
-
                 
-                Debug.Log(index + ", " +closest.gameObject);
 
-                playerController.SwapStates(index, closest.gameObject);
-                Debug.Log("awa awa");
-                closest.gameObject.transform.position = new Vector3(999, 999, col.gameObject.transform.position.z);
-
-                return;
-                
             }
         }
 
+        if (closest != null)
+        {
+            int index = closest.gameObject.GetComponent<WeaponGround>().weaponIndex;
+
+
+            Debug.Log(index + ", " + closest.gameObject);
+
+
+            playerController.SwapStates(index, closest.gameObject);
+            Debug.Log("awa awa");
+            closest.gameObject.transform.position = new Vector3(999, 999, closest.gameObject.transform.position.z);
+
+        }
         //pick up nearby weapon 
     }
 

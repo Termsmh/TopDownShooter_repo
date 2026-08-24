@@ -6,20 +6,25 @@ public class Baseball : MeleeWeapon
 
 
 
+    
 
-    private void Start()
+
+    private void OnEnable()
     {
+        slideUI.Slide(true);
+        if (ammoDisplay != null)
+        {
+            ammoDisplay.ChangeAmmoImage(0);
+            maxAmmoDisplay.ChangeAmmoImage(0);
+        }
 
-        animator = GetComponent<Animator>();
     }
-
-
 
     public override void Attack()
     {
         animator.SetTrigger("Attack");
-
-        Collider2D[] collider = Physics2D.OverlapBoxAll(AttackField.transform.position, new Vector2(1, 2.5f), AttackField.transform.eulerAngles.z, LayerMask.GetMask("EnemyLayer", "Environment"));
+        attackSound.Play();
+        Collider2D[] collider = Physics2D.OverlapBoxAll(AttackField.transform.position, new Vector2(AttackField.transform.localScale.x, AttackField.transform.localScale.y), AttackField.transform.eulerAngles.z, LayerMask.GetMask("EnemyLayer", "Breakable"));
 
         foreach (var col in collider)
         {

@@ -3,10 +3,7 @@
 public class Grenade : MeleeWeapon
 {
     public readonly static int index = 4;
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+    
 
     public override void Attack()
     {
@@ -43,11 +40,5 @@ public class Grenade : MeleeWeapon
         playerController.SwapStates(0);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

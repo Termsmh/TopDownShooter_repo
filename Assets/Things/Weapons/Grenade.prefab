@@ -95,7 +95,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 136
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   radius: 2
   cam: {fileID: 0}
   explosion: {fileID: 6981629936003106335, guid: 8d805f5def7f9714a9715cbcee36216e, type: 3}
-  cameraShakeDuration: 0.2
+  cameraShakeDuration: 0.4
   cameraShakeMagnitude: 1
   isThrown: 0
   isTimed: 1

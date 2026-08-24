@@ -4,6 +4,7 @@ using UnityEngine.AI;
 using Pathfinding;
 using System;
 
+
 public class Enemy : MonoBehaviour
 {
     Animator animator;
@@ -54,14 +55,22 @@ public class Enemy : MonoBehaviour
        // o.Die();
     }*/
 
+    
     // Update is called once per frame
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (collider.gameObject.tag == "Player")
+        if (angry) { return; }
+
+        if (other.gameObject.tag == "Player")
         {
+            
+            
             Debug.Log("i shall chase u rahhhhhh");
-            setter.target = collider.gameObject.transform;
+            setter.target = other.gameObject.transform;
             angry = true;
+
+            
+
         }
         
     }

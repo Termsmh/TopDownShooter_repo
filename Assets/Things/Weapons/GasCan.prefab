@@ -59,7 +59,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeExplo: 2
   radius: 3
+  cam: {fileID: 0}
   explosion: {fileID: 6981629936003106335, guid: 8d805f5def7f9714a9715cbcee36216e, type: 3}
   cameraShakeDuration: 1.5
   cameraShakeMagnitude: 1.75

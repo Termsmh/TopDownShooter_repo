@@ -8,7 +8,7 @@ public class Pistol : RangedWeapon
     private PlayerController playerController;
 
 
-    [SerializeField]
+    
     public readonly static int index = 2;
 
     private Animator animator;
@@ -25,22 +25,48 @@ public class Pistol : RangedWeapon
     public bool fromPlayer;
 
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         animator = GetComponent<Animator>();
-        ammo = ammoMax;
+        ammoDisplay.ChangeAmmoImage(ammo);
+        maxAmmoDisplay.ChangeAmmoImage(ammoMax);
+
+        Debug.Log("pistolenambledawawa IN START");
+
+        slideUI.Slide(true);
+
     }
+
+    private void OnEnable()
+    {
+        Debug.Log("pistolenambledawawa");
+        if (ammoDisplay != null) {
+            
+            maxAmmoDisplay.ChangeAmmoImage(ammoMax);
+            slideUI.Slide(true);
+        }
+    }
+    
+    
+
     public override void Attack()
     {
         if (ammo > 0)
         {
         animator.SetTrigger("Attack");
             ammo--;
+            ammoDisplay.ChangeAmmoImage(ammo);
             Bullet b = Instantiate(bullet, bulletOrigin.transform.position, Quaternion.identity);
-            
+            attackSound.Play();
             b.rb.transform.right = bulletOrigin.transform.right.normalized;
             b.rb.linearVelocity = b.transform.right * bulletSpeed;
             
+        }
+        else
+        {
+            
+            emptySound.Play();
         }
     }
 
@@ -52,7 +78,7 @@ public class Pistol : RangedWeapon
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 throwDirection = mouseWorldPos - pos;
 
-
+        slideUI.Slide(false);
 
 
 
@@ -76,5 +102,11 @@ public class Pistol : RangedWeapon
         gunInfo = obj.GetComponent<GunInfo>();
 
         ammo = gunInfo.ammoLeft;
+        if (ammoDisplay != null) 
+        {
+        
+        ammoDisplay.ChangeAmmoImage(ammo);
+        maxAmmoDisplay.ChangeAmmoImage(ammoMax);
+        }
     }
 }

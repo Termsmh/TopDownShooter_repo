@@ -10,11 +10,28 @@ public abstract class RangedWeapon : Weapon
 
     public int ammo;
 
+    public AudioSource emptySound;
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public virtual void Start()
     {
         ammo = ammoMax;
+        slideUI = FindFirstObjectByType<SlideUI>();
+        ammoDisplay = FindFirstObjectByType<AmmoDisplay>();
+        maxAmmoDisplay = FindFirstObjectByType<MaxAmmoDisplay>();
     }
 
-    
+    private void OnEnable()
+    {
+        if (ammoDisplay != null) 
+        {
+            ammoDisplay.ChangeAmmoImage(ammo);
+            maxAmmoDisplay.ChangeAmmoImage(ammoMax);
+        }
+    }
+
 }

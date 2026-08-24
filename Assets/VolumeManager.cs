@@ -26,7 +26,10 @@ public class VolumeManager : MonoBehaviour
     public void ChangeVolume()
     {
         AudioListener.volume = volumeSlider.value;
+        
         Save();
+        Debug.Log(AudioListener.volume);
+        Debug.Log(PlayerPrefs.GetFloat("Volume") + " PPREF");
     }
 
     void Load()

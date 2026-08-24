@@ -7,21 +7,10 @@ public class CameraShake : MonoBehaviour
 {
     
 
-    float elapsed = 0.0f; // Elapsed time since the shake started   
+    float elapsed = 0f;  
 
     [SerializeField]
-    float damping = 1f;
-    
-
-    
-   
-   
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
+    float damping = 1f; //the higher value - the smaller falloff (1 or less preferable)
 
     public void Shake(float duration, float magnitude)
     {
@@ -32,34 +21,30 @@ public class CameraShake : MonoBehaviour
     {
 
         elapsed = 0f;
-
         Vector3 originalPos = transform.localPosition;
 
         while (elapsed < duration)
         {
 
-            float xOffset = UnityEngine.Random.Range(-0.5f, 0.5f) * magnitude;
-            float yOffset = UnityEngine.Random.Range(-0.5f, 0.5f) * magnitude;
+            if (damping - elapsed <= 0) 
+            {
+                yield return null;
+            }
+
+            float xOffset = UnityEngine.Random.Range(-0.5f, 0.5f) * magnitude * (1 - damping - elapsed);
+            float yOffset = UnityEngine.Random.Range(-0.5f, 0.5f) * magnitude * (1 - damping - elapsed);
+
+            
 
             transform.localPosition = new Vector3(originalPos.x + xOffset,originalPos.y + yOffset, originalPos.z);
             elapsed += Time.deltaTime;
 
             yield return null;
 
-
         }
-
-
         transform.localPosition = originalPos;
 
-
-
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

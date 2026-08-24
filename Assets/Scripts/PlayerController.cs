@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject currentSprite;
 
+    CameraShake camShake;
 
 
     Animator animator;
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
 
-
+        camShake = Camera.main.GetComponent<CameraShake>();
         SwapStates(itester);
         
 
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.E))
+       /* if (Input.GetKeyDown(KeyCode.E))
         {
             
             //testing purposes        
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
                     itester %= sprites.Length;
                     SwapStates(itester);
             
-        }
+        }*/
         if (Input.GetMouseButtonDown(0)) 
         {
             Attack();
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(1)) 
         {
             
+                
                 currentSprite.GetComponent<Weapon>().Throw();
             
         }
@@ -105,6 +107,7 @@ public class PlayerController : MonoBehaviour
         }
         
         currentSprite.GetComponent<Weapon>().Attack();
+
         lastAttackTime = Time.time;
 
     }
@@ -114,6 +117,7 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         RetryScreen();
+        camShake.Shake(0.3f, 2f);
         Destroy(gameObject);
 
     }

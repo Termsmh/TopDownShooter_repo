@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,9 +9,14 @@ public class LevelManagement : MonoBehaviour
 
     public GameObject retryScreen;
 
+    private Fade fade;
+
+
+    
 
     private void Start()
     {
+        fade = GetComponentInChildren<Fade>();
         retryScreen.SetActive(false);
     }
 
@@ -28,17 +34,28 @@ public class LevelManagement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            LoadLevel(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(ReloadLevel());
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (SceneManager.GetActiveScene().name == "MainMenu") return;
+            
             LoadLevel("MainMenu");
         }
         if (Input.GetKeyDown(KeyCode.T)) 
         {
             LoadLevel("testtest");
         }
+    }
+    IEnumerator ReloadLevel()
+    {
+
+        fade.FadeIn();
+        yield return new WaitForSeconds(5f / 6f);
+        LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        fade.FadeOut();
+
     }
 }
