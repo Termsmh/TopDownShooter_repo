@@ -11,6 +11,9 @@ public class Baseball : MeleeWeapon
 
     private void OnEnable()
     {
+
+        animator = GetComponent<Animator>();
+
         slideUI.Slide(true);
         if (ammoDisplay != null)
         {
